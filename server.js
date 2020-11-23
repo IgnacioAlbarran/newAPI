@@ -7,6 +7,8 @@ app.listen(PORT, () => {
   console.log('SERVER EN MARCHA, ADELANTE!!!');
 });
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.send('YOU ARE IN THE MAIN PAGE')
 });
@@ -37,7 +39,7 @@ app.post('/request/food', (req, res) => {
   console.log(`*********************`)
   console.log(`*********************`)
 
-  res.json('My Favourite food is ' + res.body.food)
+  res.send('My Favourite food is ' + res.body.food)
 });
 
 
